@@ -47,7 +47,7 @@ jobs:
         workflow: Publish Action A
         token: ${{ secrets.GH_PAT }}
 
-    - name: Trigger the Play Publish Action B
+    - name: Trigger the Publish Action B
       uses: benc-uk/workflow-dispatch@v1
       with:
         workflow: Publish Action B
