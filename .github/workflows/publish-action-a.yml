@@ -1,0 +1,15 @@
+# This workflow can be manually triggered and will publish to repository A
+#
+name: Publish Action A
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+    - name: Completed
+      run: |
+        echo "Done."

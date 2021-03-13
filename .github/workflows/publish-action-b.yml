@@ -1,0 +1,19 @@
+# This workflow can be manually triggered and will publish to repository B
+#
+name: Publish Action B
+
+on:
+  workflow_dispatch:
+    inputs:
+      variable:
+        description: 'Some variable'
+        required: false
+        default: 'foobar'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Completed
+      run: |
+        echo "Done with ${{ github.event.inputs.variable }}."

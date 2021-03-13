@@ -1,0 +1,10 @@
+{
+  "name": "release-publish-template",
+  "version": "0.0.0",
+  "description": "GitHub actions to release and publish",
+  "main": "lib/index.js",
+  "repository": "git@github.com:joaocarmo/release-publish-template.git",
+  "author": "João Carmo <17721880+joaocarmo@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true
+}
