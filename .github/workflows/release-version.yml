@@ -13,6 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
+        token: ${{ secrets.GH_PAT }}
         ref: 'main'
     - name: Use Node.js v14 (LTS)
       uses: actions/setup-node@v1
@@ -26,7 +27,7 @@ jobs:
       id: get_release
       uses: bruceadams/get-release@v1.2.2
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
     - name: Bump the version
       run: |
@@ -44,11 +45,11 @@ jobs:
       uses: benc-uk/workflow-dispatch@v1
       with:
         workflow: Publish Action A
-        token: ${{ github.token }}
+        token: ${{ secrets.GH_PAT }}
 
     - name: Trigger the Play Publish Action B
       uses: benc-uk/workflow-dispatch@v1
       with:
         workflow: Publish Action B
-        token: ${{ github.token }}
+        token: ${{ secrets.GH_PAT }}
         inputs: '{ "variable": "charlie" }'
